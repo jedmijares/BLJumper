@@ -2,8 +2,11 @@
 
 static Wall *wallHead = NULL;
 
+const SDL_Color wallColor = {255, 165, 0, 255};
+
 void initWall(Entity where)
 {
+    where.color = wallColor;
     Wall *newWall = malloc(sizeof(Wall));
     newWall->structure = where;
     newWall->next = wallHead;

@@ -42,7 +42,7 @@ void blit(SDL_Texture *texture, Vector2 position, int width)
 
 void drawEntity(Entity entity)
 {
-    SDL_Rect rect = {entity.position.x, entity.position.y, entity.w, entity.h};
-    SDL_SetRenderDrawColor(app.renderer, 0x00, entity.color.r, entity.color.g, entity.color.b);
-    SDL_RenderFillRect(app.renderer, &rect);
+	SDL_Rect rect = {entity.position.x, entity.position.y, entity.w, entity.h};
+	SDL_SetRenderDrawColor(app.renderer, entity.color.r, entity.color.g, entity.color.b, entity.color.a);
+	SDL_RenderFillRect(app.renderer, &rect);
 }

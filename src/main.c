@@ -47,8 +47,8 @@ static void logic(void)
 
 static void draw(void)
 {
-	drawPlayer(*player);
 	drawWalls();
+	drawPlayer(*player);
 }
 
 // static void reset(void)

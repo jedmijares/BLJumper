@@ -1,5 +1,7 @@
 #include "player.h"
 
+static Entity nextPos;
+
 Entity *initPlayer()
 {
     Entity *player = malloc(sizeof(Entity));
@@ -7,11 +9,14 @@ Entity *initPlayer()
 
     player->position.x = SCREEN_WIDTH / 2;
     player->position.y = SCREEN_HEIGHT / 2;
-    player->w = 100;
-    player->h = 100;
-    player->color.r = 0xff;
-    player->color.g = 0x00;
-    player->color.b = 0xff;
+    player->w = 50;
+    player->h = 50;
+    player->color.r = 0x00;
+    player->color.g = 0xff;
+    player->color.b = 0x00;
+    player->color.a = 0xff;
+    nextPos = *player;
+    nextPos.color.a = 0x77;
     return player;
 }
 
@@ -45,6 +50,7 @@ bool updatePlayer(Entity *player)
 
     player->position.x += player->velocity.x;
     player->position.y += player->velocity.y;
+    nextPos.position = player->position;
 
     bool colliding = checkWallCollision(player);
 
@@ -60,4 +66,5 @@ bool updatePlayer(Entity *player)
 void drawPlayer(Entity player)
 {
     drawEntity(player);
+    drawEntity(nextPos);
 }

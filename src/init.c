@@ -17,6 +17,8 @@ void initSDL(void)
 
 	app.renderer = SDL_CreateRenderer(app.window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
+	SDL_SetRenderDrawBlendMode(app.renderer, SDL_BLENDMODE_BLEND); // enable transparency
+
 	SDL_RenderSetLogicalSize(app.renderer, SCREEN_WIDTH, SCREEN_HEIGHT);
 
 	IMG_Init(IMG_INIT_PNG | IMG_INIT_JPG);
