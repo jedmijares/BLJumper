@@ -67,9 +67,9 @@ target_link_libraries(${PROJECT_NAME} SDL2::Image)
 #find_package(SDL2_mixer REQUIRED)
 #target_link_libraries(${PROJECT_NAME} SDL2::Mixer)
 
-# Add SDL2_gfx library
-find_package(SDL2_gfx REQUIRED)
-target_link_libraries(${PROJECT_NAME} SDL2::GFX)
+# # Add SDL2_gfx library
+# find_package(SDL2_gfx REQUIRED)
+# target_link_libraries(${PROJECT_NAME} SDL2::GFX)
 
 # Copy assets
 file(COPY assets DESTINATION ${CMAKE_BINARY_DIR})
