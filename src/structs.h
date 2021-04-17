@@ -5,12 +5,14 @@
 
 #include "SDL2/SDL.h"
 
-typedef struct {
+typedef struct
+{
 	void (*logic)(void);
 	void (*draw)(void);
 } Delegate;
 
-typedef struct {
+typedef struct
+{
 	SDL_Renderer *renderer;
 	SDL_Window *window;
 	Delegate delegate;
@@ -18,12 +20,14 @@ typedef struct {
 	int pressed[MAX_KEYBOARD_KEYS];
 } App;
 
-typedef struct {
+typedef struct
+{
 	float x, y;
 } Vector2;
 
 typedef struct Entity Entity;
-struct Entity {
+struct Entity
+{
 	Vector2 position;
 	int w;
 	int h;

@@ -3,7 +3,6 @@
 #include "draw.h"
 #include "input.h"
 
-
 App app;
 
 static void logic(void)
@@ -25,7 +24,7 @@ int main(int argc, char *argv[])
 	atexit(cleanup);
 	app.delegate.logic = logic;
 	app.delegate.draw = draw;
-	
+
 	// player = initPlayer();
 
 	while (1)
