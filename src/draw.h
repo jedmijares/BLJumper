@@ -10,6 +10,7 @@ extern App app;
 void prepareScene(void);
 void presentScene(void);
 void blit(SDL_Texture *texture, Vector2 position, int width);
+void drawEntity(Entity entity);
 SDL_Texture *loadTexture(char *filename);
 
 #endif

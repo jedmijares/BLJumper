@@ -39,3 +39,10 @@ void blit(SDL_Texture *texture, Vector2 position, int width)
 
 	SDL_RenderCopy(app.renderer, texture, NULL, &dest);
 }
+
+void drawEntity(Entity entity)
+{
+    SDL_Rect rect = {entity.position.x, entity.position.y, entity.w, entity.h};
+    SDL_SetRenderDrawColor(app.renderer, 0x00, entity.color.r, entity.color.g, entity.color.b);
+    SDL_RenderFillRect(app.renderer, &rect);
+}

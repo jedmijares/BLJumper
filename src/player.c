@@ -9,12 +9,15 @@ Entity *initPlayer()
     player->position.y = SCREEN_HEIGHT / 2;
     player->w = 100;
     player->h = 100;
+    player->color.r = 0xff;
+    player->color.g = 0x00;
+    player->color.b = 0xff;
     // player->texture = loadTexture("assets/player.png");
     // SDL_QueryTexture(player->texture, NULL, NULL, &player->w, &player->h);
     return player;
 }
 
-bool doPlayer(Entity *player)
+bool updatePlayer(Entity *player)
 {
     const float SPEED = 5;
 
@@ -47,9 +50,7 @@ bool doPlayer(Entity *player)
     return true;
 }
 
-void drawPlayer(Entity *player)
+void drawPlayer(Entity player)
 {
-    SDL_Rect rect = {player->position.x, player->position.y, player->w, player->h};
-    SDL_SetRenderDrawColor(app.renderer, 0x00, 0xFF, 0x00, 0xFF);
-    SDL_RenderFillRect(app.renderer, &rect);
+    drawEntity(player);
 }

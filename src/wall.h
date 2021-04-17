@@ -2,24 +2,26 @@
 #define WALL_H
 
 #include "SDL2/SDL.h"
-// #include "draw.h"
 // #include "init.h"
 #include "structs.h"
 // #include "input.h"
 #include <stdbool.h>
+#include "draw.h"
 
 extern App app;
 
 typedef struct Wall Wall;
 struct Wall
 {
-    Entity *wall;
+    Entity structure;
     Wall *next;
 };
 
-void *initWall(Entity *newWall);
-void updateWalls();
+void initWall(Entity where);
+// void updateWalls();
 void drawWalls();
-bool checkCollision(Entity *player);
+bool checkCollision(Entity object); // returns true if entity overlaps with any walls
+void *freeWall(Wall *wall);
+void *freeAllWalls();
 
 #endif

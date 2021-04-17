@@ -3,6 +3,7 @@
 #include "draw.h"
 #include "input.h"
 #include "player.h"
+#include "wall.h"
 
 App app;
 static Entity *player;
@@ -22,6 +23,12 @@ int main(int argc, char *argv[])
 	app.delegate.draw = draw;
 
 	player = initPlayer();
+	Entity wallEntity;
+	wallEntity.position.x = SCREEN_WIDTH / 2;
+	wallEntity.position.y = SCREEN_HEIGHT / 2;
+	wallEntity.h = 100;
+	wallEntity.w = 100;
+	initWall(wallEntity);
 
 	while (1)
 	{
@@ -37,12 +44,13 @@ int main(int argc, char *argv[])
 
 static void logic(void)
 {
-	doPlayer(player);
+	updatePlayer(player);
 }
 
 static void draw(void)
 {
-	drawPlayer(player);
+	drawPlayer(*player);
+	drawWalls();
 }
 
 static void reset(void)

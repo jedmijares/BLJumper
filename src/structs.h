@@ -18,7 +18,8 @@ typedef struct
 
 typedef struct
 {
-	float x, y;
+	float x;
+	float y;
 } Vector2;
 
 typedef struct Entity Entity;
@@ -28,6 +29,7 @@ struct Entity
 	int w;
 	int h;
 	Vector2 velocity;
+	SDL_Color color;
 	// SDL_Texture *texture;
 	// Entity *next;
 };

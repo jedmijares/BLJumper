@@ -13,7 +13,7 @@ extern App app;
 // extern void blit(SDL_Texture *texture, int x, int y);
 
 Entity *initPlayer();
-bool doPlayer(Entity *player);
-void drawPlayer(Entity *player);
+bool updatePlayer(Entity *player);
+void drawPlayer(Entity player);
 
 #endif
