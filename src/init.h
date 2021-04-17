@@ -2,7 +2,8 @@
 #define INIT_H
 
 // #include "common.h"
-#include "SDL2/SDL_Image.h"
+#include "SDL2/SDL.h"
+#include "SDL2/SDL_image.h"
 #include "structs.h"
 
 #define SCREEN_WIDTH   1280
