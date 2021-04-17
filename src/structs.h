@@ -32,8 +32,8 @@ struct Entity
 	int w;
 	int h;
 	Vector2 velocity;
-	SDL_Texture *texture;
-	Entity *next;
+	// SDL_Texture *texture;
+	// Entity *next;
 };
 
 #endif

@@ -9,7 +9,7 @@ extern App app;
 
 void prepareScene(void);
 void presentScene(void);
-void blit(SDL_Texture *texture, int x, int y);
+void blit(SDL_Texture *texture, Vector2 position, int width);
 SDL_Texture *loadTexture(char *filename);
 
 #endif

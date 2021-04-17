@@ -1,4 +1,5 @@
 #include "draw.h"
+#include <stdio.h>
 
 void prepareScene(void)
 {
@@ -22,13 +23,19 @@ SDL_Texture *loadTexture(char *filename)
 	return texture;
 }
 
-void blit(SDL_Texture *texture, int x, int y)
+void blit(SDL_Texture *texture, Vector2 position, int width)
 {
 	SDL_Rect dest;
 
-	dest.x = x;
-	dest.y = y;
+	dest.x = position.x;
+	dest.y = position.y;
 	SDL_QueryTexture(texture, NULL, NULL, &dest.w, &dest.h);
+	if (width != 0)
+	{
+		dest.h = ((float)width) / dest.w * dest.h;
+		dest.w = width;
+		// printf("Decimals: %d %ld\n", dest.h, dest.w);
+	}
 
 	SDL_RenderCopy(app.renderer, texture, NULL, &dest);
 }

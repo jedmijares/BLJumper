@@ -2,15 +2,19 @@
 #include "init.h"
 #include "draw.h"
 #include "input.h"
+#include "player.h"
 
 App app;
+static Entity *player;
 
 static void logic(void)
 {
+	doPlayer(player);
 }
 
 static void draw(void)
 {
+	drawPlayer(player);
 }
 
 static void reset(void)
@@ -25,7 +29,7 @@ int main(int argc, char *argv[])
 	app.delegate.logic = logic;
 	app.delegate.draw = draw;
 
-	// player = initPlayer();
+	player = initPlayer();
 
 	while (1)
 	{
