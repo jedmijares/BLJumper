@@ -13,8 +13,8 @@ extern App app;
 // extern SDL_Texture *loadTexture(char *filename);
 // extern void blit(SDL_Texture *texture, int x, int y);
 
-Entity *initPlayer();
-bool updatePlayer(Entity *player);
-void drawPlayer(Entity player);
+void initPlayer(void);
+bool updatePlayer(void);
+void drawPlayer(void);
 
 #endif

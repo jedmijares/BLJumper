@@ -6,7 +6,7 @@
 #include "wall.h"
 
 App app;
-static Entity *player;
+// static Entity *player;
 
 static void logic(void);
 static void draw(void);
@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 	app.delegate.logic = logic;
 	app.delegate.draw = draw;
 
-	player = initPlayer();
+	initPlayer();
 	Entity wallEntity;
 	wallEntity.position.x = SCREEN_WIDTH / 3;
 	wallEntity.position.y = SCREEN_HEIGHT / 3;
@@ -42,13 +42,13 @@ int main(int argc, char *argv[])
 
 static void logic(void)
 {
-	updatePlayer(player);
+	updatePlayer();
 }
 
 static void draw(void)
 {
 	drawWalls();
-	drawPlayer(*player);
+	drawPlayer();
 }
 
 // static void reset(void)
