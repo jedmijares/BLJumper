@@ -3,22 +3,34 @@
 
 App app;
 
+static void logic(void)
+{
+}
+
+static void draw(void)
+{
+}
+
+static void reset(void)
+{
+}
+
 int main(int argc, char *argv[])
 {
-	// memset(&app, 0, sizeof(App));
+	memset(&app, 0, sizeof(App));
 	initSDL();
 	atexit(cleanup);
-	// app.delegate.logic = logic;
-	// app.delegate.draw = draw;
+	app.delegate.logic = logic;
+	app.delegate.draw = draw;
 	
 	// player = initPlayer();
 
 	while (1)
 	{
 		// prepareScene();
-		// doInput();
-		// app.delegate.logic();
-		// app.delegate.draw();
+		doInput();
+		app.delegate.logic();
+		app.delegate.draw();
 		// presentScene();
 	}
 
