@@ -1,5 +1,8 @@
 #include "SDL2/SDL.h"
 #include "init.h"
+#include "draw.h"
+#include "input.h"
+
 
 App app;
 
@@ -27,11 +30,11 @@ int main(int argc, char *argv[])
 
 	while (1)
 	{
-		// prepareScene();
+		prepareScene();
 		doInput();
 		app.delegate.logic();
 		app.delegate.draw();
-		// presentScene();
+		presentScene();
 	}
 
 	return 0;

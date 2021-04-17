@@ -18,14 +18,16 @@ typedef struct {
 	int pressed[MAX_KEYBOARD_KEYS];
 } App;
 
+typedef struct {
+	float x, y;
+} Vector2;
+
 typedef struct Entity Entity;
 struct Entity {
-	float x;
-	float y;
+	Vector2 position;
 	int w;
 	int h;
-	float dx;
-	float dy;
+	Vector2 velocity;
 	SDL_Texture *texture;
 	Entity *next;
 };

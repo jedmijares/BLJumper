@@ -1,7 +1,6 @@
 #ifndef DRAW_H
 #define DRAW_H
 
-// #include "common.h"
 #include "SDL2/SDL_image.h"
 #include "structs.h"
 #include "SDL2/SDL.h"
