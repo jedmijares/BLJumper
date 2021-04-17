@@ -14,8 +14,6 @@ typedef struct
 	SDL_Renderer *renderer;
 	SDL_Window *window;
 	Delegate delegate;
-	// int held[MAX_KEYBOARD_KEYS];
-	// int pressed[MAX_KEYBOARD_KEYS];
 } App;
 
 typedef struct
