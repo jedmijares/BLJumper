@@ -1,10 +1,12 @@
 #include "input.h"
 
+static Keyboard keyboard;
+
 static void doKeyUp(SDL_KeyboardEvent *event)
 {
 	if (event->repeat == 0 && event->keysym.scancode < MAX_KEYBOARD_KEYS)
 	{
-		app.held[event->keysym.scancode] = 0;
+		keyboard.held[event->keysym.scancode] = 0;
 	}
 }
 
@@ -12,14 +14,14 @@ static void doKeyDown(SDL_KeyboardEvent *event)
 {
 	if (event->repeat == 0 && event->keysym.scancode < MAX_KEYBOARD_KEYS)
 	{
-		app.held[event->keysym.scancode] = 1;
-		app.pressed[event->keysym.scancode] = 1;
+		keyboard.held[event->keysym.scancode] = 1;
+		keyboard.pressed[event->keysym.scancode] = 1;
 	}
 }
 
-void doInput(void)
+void updateInput(void)
 {
-	memset(&app.pressed, 0, sizeof(app.pressed));
+	memset(&keyboard.pressed, 0, sizeof(keyboard.pressed));
 	SDL_Event event;
 
 	while (SDL_PollEvent(&event))
@@ -42,4 +44,14 @@ void doInput(void)
 			break;
 		}
 	}
+}
+
+bool getKeyPressed(SDL_Scancode key)
+{
+	return keyboard.pressed[key];
+}
+
+bool getKeyHeld(SDL_Scancode key)
+{
+	return keyboard.held[key];
 }

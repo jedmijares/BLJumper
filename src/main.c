@@ -7,19 +7,11 @@
 App app;
 static Entity *player;
 
-static void logic(void)
-{
-	doPlayer(player);
-}
+static void logic(void);
 
-static void draw(void)
-{
-	drawPlayer(player);
-}
+static void draw(void);
 
-static void reset(void)
-{
-}
+static void reset(void);
 
 int main(int argc, char *argv[])
 {
@@ -34,11 +26,25 @@ int main(int argc, char *argv[])
 	while (1)
 	{
 		prepareScene();
-		doInput();
+		updateInput();
 		app.delegate.logic();
 		app.delegate.draw();
 		presentScene();
 	}
 
 	return 0;
+}
+
+static void logic(void)
+{
+	doPlayer(player);
+}
+
+static void draw(void)
+{
+	drawPlayer(player);
+}
+
+static void reset(void)
+{
 }

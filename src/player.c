@@ -18,22 +18,22 @@ bool doPlayer(Entity *player)
 {
     const float SPEED = 5;
 
-    if (app.held[SDL_SCANCODE_UP])
+    if (getKeyHeld(SDL_SCANCODE_UP))
     {
         player->velocity.y -= SPEED;
     }
 
-    if (app.held[SDL_SCANCODE_DOWN])
+    if (getKeyHeld(SDL_SCANCODE_DOWN))
     {
         player->velocity.y += SPEED;
     }
 
-    if (app.held[SDL_SCANCODE_LEFT])
+    if (getKeyHeld(SDL_SCANCODE_LEFT))
     {
         player->velocity.x -= SPEED;
     }
 
-    if (app.held[SDL_SCANCODE_RIGHT])
+    if (getKeyHeld(SDL_SCANCODE_RIGHT))
     {
         player->velocity.x += SPEED;
     }

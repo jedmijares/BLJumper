@@ -1,10 +1,19 @@
 #ifndef INPUT_H
 #define INPUT_H
 
-#include "structs.h"
+#define MAX_KEYBOARD_KEYS 350
 
-extern App app;
+#include "SDL2/SDL.h"
+#include <stdbool.h>
 
-void doInput(void);
+typedef struct
+{
+    int held[MAX_KEYBOARD_KEYS];
+    int pressed[MAX_KEYBOARD_KEYS];
+} Keyboard;
+
+void updateInput(void);
+bool getKeyPressed(SDL_Scancode key);
+bool getKeyHeld(SDL_Scancode key);
 
 #endif

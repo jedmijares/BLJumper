@@ -5,6 +5,7 @@
 #include "draw.h"
 #include "init.h"
 #include "structs.h"
+#include "input.h"
 #include <stdbool.h>
 
 extern App app;

@@ -1,8 +1,6 @@
 #ifndef STRUCTS_H
 #define STRUCTS_H
 
-#define MAX_KEYBOARD_KEYS 350
-
 #include "SDL2/SDL.h"
 
 typedef struct
@@ -16,8 +14,8 @@ typedef struct
 	SDL_Renderer *renderer;
 	SDL_Window *window;
 	Delegate delegate;
-	int held[MAX_KEYBOARD_KEYS];
-	int pressed[MAX_KEYBOARD_KEYS];
+	// int held[MAX_KEYBOARD_KEYS];
+	// int pressed[MAX_KEYBOARD_KEYS];
 } App;
 
 typedef struct
