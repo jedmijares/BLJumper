@@ -18,14 +18,21 @@ void drawWalls()
     }
 }
 
-bool checkWallCollision(Entity object)
+bool checkWallCollision(Entity *object)
 {
+    bool returnVal = false;
     for (Wall *pointer = wallHead; pointer != NULL; pointer = pointer->next)
     {
-        if (checkCollision(pointer->structure, object))
+        for (size_t i = 0; i < 100; i++)
         {
-            return true;
+            if (!checkCollision(pointer->structure, *object))
+            {
+                break;
+            }
+            returnVal = true;
+            object->position.x -= object->velocity.x * 0.1;
+            object->position.y -= object->velocity.y * 0.1;
         }
     }
-    return false;
+    return returnVal;
 }

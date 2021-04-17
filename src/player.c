@@ -12,8 +12,6 @@ Entity *initPlayer()
     player->color.r = 0xff;
     player->color.g = 0x00;
     player->color.b = 0xff;
-    // player->texture = loadTexture("assets/player.png");
-    // SDL_QueryTexture(player->texture, NULL, NULL, &player->w, &player->h);
     return player;
 }
 
@@ -41,16 +39,13 @@ bool updatePlayer(Entity *player)
         player->velocity.x += SPEED;
     }
 
-    player->velocity.y *= 0.8;
-    player->velocity.x *= 0.8;
-
     player->position.x += player->velocity.x;
     player->position.y += player->velocity.y;
 
-    if(checkWallCollision(*player))
+    if (!checkWallCollision(player))
     {
-        player->position.x -= player->velocity.x;
-        player->position.y -= player->velocity.y;
+        player->velocity.y *= 0.8;
+        player->velocity.x *= 0.8;
     }
 
     return true;
