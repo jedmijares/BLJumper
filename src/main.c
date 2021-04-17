@@ -24,8 +24,8 @@ int main(int argc, char *argv[])
 	Entity wallEntity;
 	wallEntity.position.x = SCREEN_WIDTH / 3;
 	wallEntity.position.y = SCREEN_HEIGHT / 3;
-	wallEntity.h = 100;
-	wallEntity.w = 100;
+	wallEntity.h = 300;
+	wallEntity.w = 200;
 	initWall(wallEntity);
 
 	while (1)

@@ -18,34 +18,40 @@ Entity *initPlayer()
 bool updatePlayer(Entity *player)
 {
     const float SPEED = 5;
-
+    bool inputting = false;
     if (getKeyHeld(SDL_SCANCODE_UP))
     {
         player->velocity.y -= SPEED;
+        inputting = true;
     }
 
     if (getKeyHeld(SDL_SCANCODE_DOWN))
     {
         player->velocity.y += SPEED;
+        inputting = true;
     }
 
     if (getKeyHeld(SDL_SCANCODE_LEFT))
     {
         player->velocity.x -= SPEED;
+        inputting = true;
     }
 
     if (getKeyHeld(SDL_SCANCODE_RIGHT))
     {
         player->velocity.x += SPEED;
+        inputting = true;
     }
 
     player->position.x += player->velocity.x;
     player->position.y += player->velocity.y;
 
-    if (!checkWallCollision(player))
+    bool colliding = checkWallCollision(player);
+
+    if (!colliding || !inputting)
     {
-        player->velocity.y *= 0.8;
-        player->velocity.x *= 0.8;
+        player->velocity.y *= 0.7;
+        player->velocity.x *= 0.7;
     }
 
     return true;
