@@ -47,6 +47,12 @@ bool updatePlayer(Entity *player)
     player->position.x += player->velocity.x;
     player->position.y += player->velocity.y;
 
+    if(checkWallCollision(*player))
+    {
+        player->position.x -= player->velocity.x;
+        player->position.y -= player->velocity.y;
+    }
+
     return true;
 }
 

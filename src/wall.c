@@ -17,3 +17,15 @@ void drawWalls()
         drawEntity(pointer->structure);
     }
 }
+
+bool checkWallCollision(Entity object)
+{
+    for (Wall *pointer = wallHead; pointer != NULL; pointer = pointer->next)
+    {
+        if (checkCollision(pointer->structure, object))
+        {
+            return true;
+        }
+    }
+    return false;
+}

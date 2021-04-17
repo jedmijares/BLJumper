@@ -7,6 +7,7 @@
 #include "structs.h"
 #include "input.h"
 #include <stdbool.h>
+#include "wall.h"
 
 extern App app;
 // extern SDL_Texture *loadTexture(char *filename);

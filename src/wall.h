@@ -20,7 +20,7 @@ struct Wall
 void initWall(Entity where);
 // void updateWalls();
 void drawWalls();
-bool checkCollision(Entity object); // returns true if entity overlaps with any walls
+bool checkWallCollision(Entity object); // returns true if entity overlaps with any walls
 void *freeWall(Wall *wall);
 void *freeAllWalls();
 

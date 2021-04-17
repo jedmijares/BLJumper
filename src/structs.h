@@ -2,6 +2,7 @@
 #define STRUCTS_H
 
 #include "SDL2/SDL.h"
+#include <stdbool.h>
 
 typedef struct
 {
@@ -33,5 +34,8 @@ struct Entity
 	// SDL_Texture *texture;
 	// Entity *next;
 };
+
+// returns true if the entities overlap
+bool checkCollision(Entity e1, Entity e2);
 
 #endif
