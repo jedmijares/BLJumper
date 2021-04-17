@@ -15,7 +15,7 @@ Entity *initPlayer()
     player->color.g = 0xff;
     player->color.b = 0x00;
     player->color.a = 0xff;
-    nextPos = *player;
+    nextPos = *player; // nextPos is identical to player, except for transparency
     nextPos.color.a = 0x77;
     return player;
 }
