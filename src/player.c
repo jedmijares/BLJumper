@@ -16,25 +16,30 @@ Entity *initPlayer()
 
 bool doPlayer(Entity *player)
 {
+    const float SPEED = 5;
+
     if (app.held[SDL_SCANCODE_UP])
     {
-        player->velocity.y -= 5;
+        player->velocity.y -= SPEED;
     }
 
     if (app.held[SDL_SCANCODE_DOWN])
     {
-        player->velocity.y += 5;
+        player->velocity.y += SPEED;
     }
 
     if (app.held[SDL_SCANCODE_LEFT])
     {
-        player->velocity.x -= 5;
+        player->velocity.x -= SPEED;
     }
 
     if (app.held[SDL_SCANCODE_RIGHT])
     {
-        player->velocity.x += 5;
+        player->velocity.x += SPEED;
     }
+
+    player->velocity.y *= 0.8;
+    player->velocity.x *= 0.8;
 
     player->position.x += player->velocity.x;
     player->position.y += player->velocity.y;
@@ -44,7 +49,6 @@ bool doPlayer(Entity *player)
 
 void drawPlayer(Entity *player)
 {
-    // blit(player->texture, player->position, 100);
     SDL_Rect rect = {player->position.x, player->position.y, player->w, player->h};
     SDL_SetRenderDrawColor(app.renderer, 0x00, 0xFF, 0x00, 0xFF);
     SDL_RenderFillRect(app.renderer, &rect);
