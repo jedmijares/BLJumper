@@ -17,9 +17,9 @@ void nextStage(void)
     case 2:
         initStage3();
         break;
-        // case 3:
-        //     initStage4();
-        // break;
+    case 3:
+        initStage4();
+        break;
     }
 }
 
@@ -39,9 +39,9 @@ void resetStage(void)
     case 3:
         initStage3();
         break;
-        // case 4:
-        //     initStage4();
-        //     break;
+    case 4:
+        initStage4();
+        break;
     }
 }
 
@@ -105,7 +105,7 @@ void initStage3(void)
     initPlayer(lastSpawnPos);
     Entity wallEntity;
     wallEntity.position.x = SCREEN_WIDTH / 2 + 300;
-    wallEntity.position.y = SCREEN_HEIGHT / 2;
+    wallEntity.position.y = 0;
     wallEntity.h = SCREEN_HEIGHT / 2;
     wallEntity.w = 300;
     initWall(wallEntity);
@@ -115,6 +115,36 @@ void initStage3(void)
     killzone.h = SCREEN_HEIGHT;
     killzone.w = 600;
     initKillzone(killzone);
-    Vector2 goalPos = {50, 50};
+    Vector2 goalPos = {400, 50};
+    initGoal(goalPos);
+}
+
+void initStage4(void)
+{
+    stage = 4;
+    initPlayer(lastSpawnPos);
+    Entity wallEntity;
+    wallEntity.position.x = 0;
+    wallEntity.position.y = 0;
+    wallEntity.h = SCREEN_HEIGHT - 450;
+    wallEntity.w = 300;
+    initWall(wallEntity);
+    wallEntity.position.x = 300;
+    wallEntity.position.y = 450;
+    wallEntity.h = SCREEN_HEIGHT - 450;
+    wallEntity.w = 300;
+    initWall(wallEntity);
+    wallEntity.position.x = 600;
+    wallEntity.position.y = 0;
+    wallEntity.h = SCREEN_HEIGHT;
+    wallEntity.w = 50;
+    initWall(wallEntity);
+    Entity killzone;
+    killzone.position.x = 650;
+    killzone.position.y = 0;
+    killzone.h = SCREEN_HEIGHT;
+    killzone.w = 1000;
+    initKillzone(killzone);
+    Vector2 goalPos = {SCREEN_WIDTH - 200, SCREEN_HEIGHT - 200};
     initGoal(goalPos);
 }
