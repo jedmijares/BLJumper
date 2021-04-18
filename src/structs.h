@@ -3,6 +3,7 @@
 
 #include "SDL2/SDL.h"
 #include <stdbool.h>
+#include "init.h"
 
 typedef struct
 {
@@ -37,5 +38,7 @@ struct Entity
 
 // returns true if the entities overlap
 bool checkCollision(Entity e1, Entity e2);
+
+void keepOnscreen(Entity *entity);
 
 #endif
