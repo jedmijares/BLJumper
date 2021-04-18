@@ -6,7 +6,6 @@
 #include "wall.h"
 
 App app;
-// static Entity *player;
 
 static void logic(void);
 static void draw(void);

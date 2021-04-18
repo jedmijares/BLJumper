@@ -34,29 +34,37 @@ bool updatePlayer(void)
     if (getKeyHeld(SDL_SCANCODE_UP))
     {
         if (!colliding || !disabled.up)
+        {
             player.velocity.y -= SPEED;
-        inputting = true;
+            inputting = true;
+        }
     }
 
     if (getKeyHeld(SDL_SCANCODE_DOWN))
     {
         if (!colliding || !disabled.down)
+        {
             player.velocity.y += SPEED;
-        inputting = true;
+            inputting = true;
+        }
     }
 
     if (getKeyHeld(SDL_SCANCODE_LEFT))
     {
         if (!colliding || !disabled.left)
+        {
             player.velocity.x -= SPEED;
-        inputting = true;
+            inputting = true;
+        }
     }
 
     if (getKeyHeld(SDL_SCANCODE_RIGHT))
     {
         if (!colliding || !disabled.right)
+        {
             player.velocity.x += SPEED;
-        inputting = true;
+            inputting = true;
+        }
     }
 
     player.position.x += player.velocity.x;
