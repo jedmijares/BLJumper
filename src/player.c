@@ -11,12 +11,17 @@ void initPlayer(void)
     player.position.y = SCREEN_HEIGHT / 2;
     player.w = 50;
     player.h = 50;
-    player.color.r = 0x00;
-    player.color.g = 0xff;
+    player.color.r = 0xff;
+    player.color.g = 0x00;
     player.color.b = 0x00;
     player.color.a = 0xff;
     nextPos = player; // nextPos is identical to player, except for transparency
     nextPos.color.a = 0x77;
+}
+
+Entity getPlayer(void)
+{
+    return player;
 }
 
 typedef struct

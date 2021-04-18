@@ -4,6 +4,7 @@
 #include "input.h"
 #include "player.h"
 #include "wall.h"
+#include "goal.h"
 
 App app;
 
@@ -26,6 +27,7 @@ int main(int argc, char *argv[])
 	wallEntity.h = 300;
 	wallEntity.w = 200;
 	initWall(wallEntity);
+	initGoal();
 
 	while (1)
 	{
@@ -42,11 +44,13 @@ int main(int argc, char *argv[])
 static void logic(void)
 {
 	updatePlayer();
+	updateGoal();
 }
 
 static void draw(void)
 {
 	drawWalls();
+	drawGoal();
 	drawPlayer();
 }
 

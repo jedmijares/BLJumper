@@ -21,7 +21,7 @@ void initWall(Entity where);
 // void updateWalls();
 void drawWalls();
 bool checkWallCollision(Entity *object); // returns true if entity overlaps with any walls
-void *freeWall(Wall *wall);
-void *freeAllWalls();
+// void freeWall(Wall *wall);
+void freeAllWalls();
 
 #endif

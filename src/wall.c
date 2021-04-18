@@ -33,9 +33,22 @@ bool checkWallCollision(Entity *object)
                 break;
             }
             returnVal = true;
+
+            // try to "push out" the object until it doesn't collide
             object->position.x -= object->velocity.x * 0.1;
             object->position.y -= object->velocity.y * 0.1;
         }
     }
     return returnVal;
+}
+
+void freeAllWalls()
+{
+    Wall *tmp;
+    while (wallHead != NULL)
+    {
+        tmp = wallHead;
+        wallHead = wallHead->next;
+        free(tmp);
+    }
 }

@@ -14,6 +14,7 @@ extern App app;
 // extern void blit(SDL_Texture *texture, int x, int y);
 
 void initPlayer(void);
+Entity getPlayer(void);
 bool updatePlayer(void);
 void drawPlayer(void);
 
