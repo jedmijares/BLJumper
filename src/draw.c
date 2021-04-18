@@ -12,33 +12,33 @@ void presentScene(void)
 	SDL_RenderPresent(app.renderer);
 }
 
-SDL_Texture *loadTexture(char *filename)
-{
-	SDL_Texture *texture;
+// SDL_Texture *loadTexture(char *filename)
+// {
+// 	SDL_Texture *texture;
 
-	SDL_LogMessage(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_INFO, "Loading %s", filename);
+// 	SDL_LogMessage(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_INFO, "Loading %s", filename);
 
-	texture = IMG_LoadTexture(app.renderer, filename);
+// 	texture = IMG_LoadTexture(app.renderer, filename);
 
-	return texture;
-}
+// 	return texture;
+// }
 
-void blit(SDL_Texture *texture, Vector2 position, int width)
-{
-	SDL_Rect dest;
+// void blit(SDL_Texture *texture, Vector2 position, int width)
+// {
+// 	SDL_Rect dest;
 
-	dest.x = position.x;
-	dest.y = position.y;
-	SDL_QueryTexture(texture, NULL, NULL, &dest.w, &dest.h);
-	if (width != 0)
-	{
-		dest.h = ((float)width) / dest.w * dest.h;
-		dest.w = width;
-		// printf("Decimals: %d %ld\n", dest.h, dest.w);
-	}
+// 	dest.x = position.x;
+// 	dest.y = position.y;
+// 	SDL_QueryTexture(texture, NULL, NULL, &dest.w, &dest.h);
+// 	if (width != 0)
+// 	{
+// 		dest.h = ((float)width) / dest.w * dest.h;
+// 		dest.w = width;
+// 		// printf("Decimals: %d %ld\n", dest.h, dest.w);
+// 	}
 
-	SDL_RenderCopy(app.renderer, texture, NULL, &dest);
-}
+// 	SDL_RenderCopy(app.renderer, texture, NULL, &dest);
+// }
 
 void drawEntity(Entity entity)
 {

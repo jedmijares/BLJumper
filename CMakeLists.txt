@@ -51,9 +51,9 @@ target_compile_options(${PROJECT_NAME} PRIVATE $<$<NOT:$<C_COMPILER_ID:MSVC>>:-W
 find_package(SDL2 REQUIRED)
 target_link_libraries(${PROJECT_NAME} SDL2::Main)
 
-# Add SDL2_image library
-find_package(SDL2_image REQUIRED)
-target_link_libraries(${PROJECT_NAME} SDL2::Image)
+# # Add SDL2_image library
+# find_package(SDL2_image REQUIRED)
+# target_link_libraries(${PROJECT_NAME} SDL2::Image)
 
 # Add SDL2_ttf library
 #find_package(SDL2_ttf REQUIRED)

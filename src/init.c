@@ -21,7 +21,7 @@ void initSDL(void)
 
 	SDL_RenderSetLogicalSize(app.renderer, SCREEN_WIDTH, SCREEN_HEIGHT);
 
-	IMG_Init(IMG_INIT_PNG | IMG_INIT_JPG);
+	// IMG_Init(IMG_INIT_PNG | IMG_INIT_JPG);
 }
 
 void cleanup(void)
