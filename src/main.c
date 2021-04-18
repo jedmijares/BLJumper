@@ -5,6 +5,7 @@
 #include "player.h"
 #include "wall.h"
 #include "goal.h"
+#include "stage.h"
 
 App app;
 
@@ -20,14 +21,15 @@ int main(int argc, char *argv[])
 	app.delegate.logic = logic;
 	app.delegate.draw = draw;
 
-	initPlayer();
-	Entity wallEntity;
-	wallEntity.position.x = SCREEN_WIDTH / 3;
-	wallEntity.position.y = SCREEN_HEIGHT / 3;
-	wallEntity.h = 300;
-	wallEntity.w = 200;
-	initWall(wallEntity);
-	initGoal();
+	// initPlayer();
+	// Entity wallEntity;
+	// wallEntity.position.x = SCREEN_WIDTH / 3;
+	// wallEntity.position.y = SCREEN_HEIGHT / 3;
+	// wallEntity.h = 300;
+	// wallEntity.w = 200;
+	// initWall(wallEntity);
+	// initGoal();
+	initStage0();
 
 	while (1)
 	{

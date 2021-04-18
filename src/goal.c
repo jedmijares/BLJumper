@@ -2,14 +2,12 @@
 
 static Entity goal;
 
-void initGoal(void)
+void initGoal(Vector2 position)
 {
-    memset(&goal, 0, sizeof(Entity));
-
-    goal.position.x = SCREEN_WIDTH / 2 + 200;
-    goal.position.y = SCREEN_HEIGHT / 2;
-    goal.w = 100;
-    goal.h = 100;
+    // memset(&goal, 0, sizeof(Entity));
+    goal.position = position;
+    goal.w = GOAL_SIZE;
+    goal.h = GOAL_SIZE;
     goal.color.r = 0x00;
     goal.color.g = 0xff;
     goal.color.b = 0x00;
@@ -18,9 +16,10 @@ void initGoal(void)
 
 void updateGoal(void)
 {
-    if (checkCollision(goal, getPlayer()))
+    if (checkCollision(goal, getPlayer()) && getPlayer().velocity.x == 0 && getPlayer().velocity.y == 0)
     {
         freeAllWalls();
+        nextStage();
     }
 }
 

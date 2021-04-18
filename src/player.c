@@ -3,14 +3,13 @@
 static Entity player;
 static Entity nextPos; // "shadow" of position on the next frame
 
-void initPlayer(void)
+void initPlayer(Vector2 position)
 {
     memset(&player, 0, sizeof(Entity));
 
-    player.position.x = SCREEN_WIDTH / 2;
-    player.position.y = SCREEN_HEIGHT / 2;
-    player.w = 50;
-    player.h = 50;
+    player.position = position;
+    player.w = PLAYER_SIZE;
+    player.h = PLAYER_SIZE;
     player.color.r = 0xff;
     player.color.g = 0x00;
     player.color.b = 0x00;

@@ -10,10 +10,10 @@
 #include "wall.h"
 
 extern App app;
-// extern SDL_Texture *loadTexture(char *filename);
-// extern void blit(SDL_Texture *texture, int x, int y);
 
-void initPlayer(void);
+static const int PLAYER_SIZE = 50;
+
+void initPlayer(Vector2 position);
 Entity getPlayer(void);
 bool updatePlayer(void);
 void drawPlayer(void);

@@ -8,8 +8,11 @@
 #include "player.h"
 // #include <stdbool.h>
 #include "wall.h"
+#include "stage.h"
 
-void initGoal(void);
+static const int GOAL_SIZE = 100;
+
+void initGoal(Vector2 position);
 void updateGoal(void);
 void drawGoal(void);
 
