@@ -18,6 +18,7 @@ void updateGoal(void)
 {
     if (checkCollision(goal, getPlayer()) && getPlayer().velocity.x == 0 && getPlayer().velocity.y == 0)
     {
+        freeAllKillzones();
         freeAllWalls();
         nextStage();
     }

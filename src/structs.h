@@ -28,8 +28,8 @@ typedef struct Entity Entity;
 struct Entity
 {
 	Vector2 position;
-	int w;
-	int h;
+	float w;
+	float h;
 	Vector2 velocity;
 	SDL_Color color;
 	// SDL_Texture *texture;

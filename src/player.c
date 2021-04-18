@@ -114,6 +114,17 @@ bool updatePlayer(void)
     }
 
     keepOnscreen(&player);
+
+    if (checkKillzoneCollision(&player))
+    {
+        nextPos.w = player.w *= 0.96;
+        nextPos.h = player.h *= 0.96;
+        if (player.w < 15)
+        {
+            resetStage();
+        }
+    }
+
     return true;
 }
 

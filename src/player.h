@@ -8,6 +8,8 @@
 #include "input.h"
 #include <stdbool.h>
 #include "wall.h"
+#include "killzone.h"
+#include "stage.h"
 
 extern App app;
 

@@ -39,7 +39,6 @@ int main(int argc, char *argv[])
 		app.delegate.draw();
 		presentScene();
 	}
-
 	return 0;
 }
 
@@ -52,6 +51,7 @@ static void logic(void)
 static void draw(void)
 {
 	drawWalls();
+	drawKillzones();
 	drawGoal();
 	drawPlayer();
 }

@@ -2,11 +2,9 @@
 #define GOAL_H
 
 #include "SDL2/SDL.h"
-// #include "draw.h"
-// #include "init.h"
 #include "structs.h"
 #include "player.h"
-// #include <stdbool.h>
+#include "killzone.h"
 #include "wall.h"
 #include "stage.h"
 
